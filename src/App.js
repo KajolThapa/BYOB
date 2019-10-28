@@ -3,11 +3,22 @@ import './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
+  state = {
+    persons: [
+      {name: "Momo", age: 4},
+      {name: "Mila", age: 1},
+    ]
+  }
+  switchNameHandler = () => {
+    alert('Was Clicked');
+  }
   render() {
     return (
       <div className="App">
-      <Person name="Momo" age="4"> Hobbies: Playing with laser </Person>
-      <Person name="Mila" age="1" />
+        <h1></h1>
+        <button onClick={this.switchNameHandler}> Switch Name </button>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}> Hobbies: Playing with laser </Person>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
       </div>
     );
   }
